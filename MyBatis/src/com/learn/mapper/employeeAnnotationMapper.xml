@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learn.mapper.employeeAnnotationMapper">
+
+<!--    和类注解方式开启会重复-->
+<!--    <cache-->
+<!--            eviction="FIFO"-->
+<!--            flushInterval="60000"-->
+<!--            size="512"-->
+<!--            readOnly="true"/>-->
+
+    <resultMap id="OnlyDeptMap" type="department">
+        <id column="department_id" property="department_id"/>
+        <result column="department_name" property="department_name"/>
+        <result column="manager_id" property="manager_id"/>
+    </resultMap>
+</mapper>
