@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learn.mapper.departmentMapper">
+    <cache
+            eviction="FIFO"
+            flushInterval="60000"
+            size="512"
+            readOnly="true"/>
+
+    <resultMap id="deptMap" type="department">
+        <id column="department_id" property="department_id"/>
+        <result column="department_name" property="department_name"/>
+        <result column="manager_id" property="manager_id"/>
+        <collection property="employees" ofType="employee">
+            <result column="employee_id" property="employeeId"/>
+            <result column="last_name" property="lastName"/>
+            <result column="email" property="email" javaType="String"/>
+            <result column="department_id" property="departmentId"/>
+            <result column="salary" property="salary"/>
+        </collection>
+    </resultMap>
+
+
+    <select id="getDepartmentById" parameterType="int" resultMap="deptMap">
+        select departments.department_id, department_name, departments.manager_id, employee_id, last_name, email, salary
+        from employees
+                 right join departments
+                            on employees.department_id = departments.department_id
+        where departments.department_id = #{departmentId};
+
+    </select>
+
+</mapper>

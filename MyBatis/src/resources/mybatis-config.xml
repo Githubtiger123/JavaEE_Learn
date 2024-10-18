@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 开启驼峰命名映射 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+    <typeAliases>
+<!--        <typeAlias type="com.learn.model.employee" alias="employee"/>-->
+<!--        将包下所有类起别名-->
+        <package name="com.learn.model"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/dbtest2"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="com/learn/mapper/employeeMapper.xml"/>
+        <mapper resource="com/learn/mapper/departmentMapper.xml"/>
+<!--        用注解和xml文件混合开发时只需要注册一次，要么注册xml要么直接注册接口-->
+<!--        <mapper resource="com/learn/mapper/employeeAnnotationMapper.xml"/>-->
+        <mapper class="com.learn.mapper.employeeAnnotationMapper"/>
+        <mapper class="com.learn.mapper.departmentAnnotationMapper"/>
+<!--        <package name="com.learn.mapper"/>-->
+    </mappers>
+</configuration>
