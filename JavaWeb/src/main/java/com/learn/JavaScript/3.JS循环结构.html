@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+
+            var i = 1;
+            while (i <= 9) {
+                for (var j = 1; j <= i; j += 1) {
+                    document.write(j + "*" + i + "=" + j * i + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+                }
+                document.write("<hr>")
+                i += 1
+            }
+
+            var arr = ["北京", "上海", "深圳", "武汉", "西安", "成都"]
+            for (var index in arr) {
+                document.write(arr[index] + "&nbsp;")
+                document.write("<br>")
+            }
+
+        </script>
+
+    </head>
+    <body>
+
+    </body>
+</html>

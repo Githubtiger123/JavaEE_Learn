@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML常见标签2</title>
+    </head>
+    <body>
+
+        <form action="https://www.baidu.com" method="get">
+            用户名 <input type="text" name="username">
+            <br>
+            密码 <input type="password" name="passwd">
+            <br>
+            <input type="submit" value="登录">
+            <input type="reset" value="重置">
+        </form>
+
+        <hr>
+        <form action="https://www.baidu.com" method="post">
+            用户名 <input type="text" name="username">
+            <br>
+            密码 <input type="password" name="passwd">
+            <br>
+            <input type="submit" value="登录">
+            <input type="reset" value="重置">
+        </form>
+        <br>
+        <!--        表单项标签-->
+        个性签名：<input type="text" name="signal"/><br/>
+        密码：<input type="password" name="signal"/><br/>
+
+        性别：
+        <input type="radio" name="sex" value="man">男
+        <input type="radio" name="sex" value="woman" checked="checked">女 <br>
+
+        <input type="checkbox" name="country" value="china" checked>china
+        <input type="checkbox" name="country" value="American">American
+        <input type="checkbox" name="country" value="japan">japan
+        <input type="checkbox" name="country" value="Australia">Australia
+        <input type="checkbox" name="country" value="Koran" checked>Koran <br>
+
+        <select name="interesting">
+            <option value="swimming">游泳</option>
+            <option value="running">跑步</option>
+            <option value="shopping">购物</option>
+            <option value="football">足球</option>
+            <option value="basketball" selected>篮球</option>
+        </select>
+        <br>
+        <button type="button">普通按钮</button>或<input type="button" value="普通按钮"/>
+        <button type="reset">重置按钮</button>或<input type="reset" value="重置按钮"/>
+        <button type="submit">提交按钮</button>或<input type="submit" value="提交按钮"/>
+        <br>
+        <input type="hidden" name="userId" value="2233"/>
+        <input name="userId" value="2233" readonly/>
+        <input name="userId" value="2233" disabled/>
+
+        <br>
+        自我介绍
+        <textarea name="profile">
+
+        </textarea>
+        <br>
+        头像:<input type="file" name="file"/>
+
+    </body>
+</html>

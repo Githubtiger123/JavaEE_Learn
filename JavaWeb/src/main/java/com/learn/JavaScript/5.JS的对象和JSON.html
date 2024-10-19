@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+            //语法1 通过new Object()直接创建对象
+            var person = new Object();
+            person.name = "小明";
+            person.age = 18;
+            person.foods = ["苹果", "香蕉", "橘子"]
+            person.eat = function () {
+                console.log(this.age + "岁的" + this.name + "喜欢吃：")
+                for (var index in this.foods) {
+                    console.log(this.foods[index]);
+                }
+            }
+            person.eat()
+            console.log("1111111111111111111111111111111111")
+
+            //语法2 通过 {}形式创建对象
+            var person = {
+                "name": "小明",
+                "age": 18,
+                "foods": ["苹果", "香蕉", "橘子"],
+                "eat": function () {
+                    console.log(this.age + "岁的" + this.name + "喜欢吃：")
+                    for (var index in this.foods) {
+                        console.log(this.foods[index]);
+                    }
+                }
+            }
+            person.eat()
+            console.log("_____________________________")
+            //通过JSON.stringify()方法可以将一个对象转换成一个JSON格式的字符串
+            var json_str = JSON.stringify(person)
+            console.log(json_str)
+            //通过JSON.parse()方法可以将一个JSON串转换成对象
+            var p = JSON.parse(json_str);
+            p.eat = function () {
+                console.log(this.age + "岁的" + this.name + "喜欢吃：")
+                for (var index in this.foods) {
+                    console.log(this.foods[index]);
+                }
+            }
+            p.eat()
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

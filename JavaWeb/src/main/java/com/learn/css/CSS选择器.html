@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <style>
+            /*input {*/
+            /*    display: block;*/
+            /*    width: 80px;*/
+            /*    height: 40px;*/
+            /*    background-color: rgb(140, 235, 100);*/
+            /*    color: white;*/
+            /*    border: 3px solid green;*/
+            /*    font-size: 22px;*/
+            /*    font-family: '隶书';*/
+            /*    line-height: 30px;*/
+            /*    border-radius: 5px;*/
+            /*}*/
+
+            /*<!--        id选择器-->*/
+            #btn1 {
+                display: block;
+                width: 80px;
+                height: 40px;
+                background-color: rgb(140, 235, 100);
+                color: white;
+                border: 3px solid green;
+                font-size: 22px;
+                font-family: '隶书';
+                line-height: 30px;
+                border-radius: 5px;
+            }
+
+            /*class选择器*/
+            .shapeClass {
+                display: block;
+                width: 80px;
+                height: 40px;
+                border-radius: 5px;
+            }
+            .colorClass{
+                background-color: rgb(140, 235, 100);
+                color: white;
+                border: 3px solid green;
+            }
+            .fontClass {
+                font-size: 22px;
+                font-family: '隶书';
+                line-height: 30px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!--        > 元素选择器-->
+
+        <input type="button" value="按钮1"/>
+        <input type="button" value="按钮2"/>
+        <input type="button" value="按钮3"/>
+        <input type="button" value="按钮4"/>
+        <button>按钮5</button>
+        <br>
+        <button id="btn1">按钮1</button>
+        <br>
+        <input  class ="shapeClass colorClass fontClass"type="button" value="按钮1"/>
+        <input  class ="shapeClass colorClass" type="button" value="按钮2"/>
+        <input  class ="colorClass fontClass" type="button" value="按钮3"/>
+        <input  class ="fontClass" type="button" value="按钮4"/>
+        <button class="shapeClass colorClass fontClass" >按钮5</button>
+
+    </body>
+</html>

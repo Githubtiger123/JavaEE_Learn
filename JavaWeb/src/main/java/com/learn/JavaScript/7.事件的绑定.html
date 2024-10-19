@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+            function testDown1() {
+                console.log("down1")
+            }
+
+            function testDown2() {
+                console.log("down2")
+            }
+
+            function testFocus() {
+                console.log("获得焦点")
+            }
+
+            function testBlur() {
+                console.log("失去焦点")
+            }
+
+            function testChange(value) {
+                console.log("内容改变")
+                //<!--             传入改变的内容-->
+                console.log(value);
+            }
+
+            function testMouseOver() {
+                console.log("鼠标悬停")
+            }
+
+            function testMouseLeave() {
+                console.log("鼠标离开")
+            }
+
+            function testMouseMove() {
+                console.log("鼠标移动")
+            }
+
+            function testOnClick() {
+                console.log("鼠标点击")
+            }
+
+            function testReset() {
+                console.log("表单重置了")
+            }
+
+            function testSubmit() {
+                // alert("表单提交了")
+                //阻止表单提交
+                // event.preventDefault()
+                var flag = confirm("你确定要提交表单吗")
+                return flag
+            }
+
+        </script>
+    </head>
+    <body>
+        <input type="text"
+               onkeydown="testDown1(),testDown2()"
+               onfocus="testFocus()"
+               onblur="testBlur()"
+               onchange="testChange(this)"
+               onmouseover="testMouseOver()"
+               onmouseleave="testMouseLeave()"
+               onmousemove="testMouseMove()"/>
+
+        <input type="button" onkeydown="testOnClick()">
+        <br>
+        <input type="text" onfocus="testFocus()"
+               onblur="testBlur()"
+               onchange="testChange(this.value)">
+        <br>
+        请选择籍贯
+        <select onchange="testChange(this.value)">
+            <option value="1">北京</option>
+            <option value="2">上海</option>
+            <option value="3">广东</option>
+            <option value="4">深圳</option>
+        </select>
+        <br>
+        <form action="6.JS常见对象.html" onsubmit="return testSubmit()" onreset="testReset()">
+            用户昵称：<input type="text"> <br>
+            用户密码：<input type="password"><br>
+            <input type="submit" value="提交">
+            <input type="reset" value="重置">
+        </form>
+
+
+    </body>
+</html>

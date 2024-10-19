@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+
+            //- 函数没有权限控制符
+            // - 不用声明函数的返回值类型,需要返回在函数体中直接return即可,也无需void关键字
+            // - 参数列表中,无需数据类型
+            // - 调用函数时,实参和形参的个数可以不一致
+            // - 声明函数时需要用function关键字
+            // - J函数没有异常列表
+            function sum(a, b) {
+                return a + b;
+            }
+
+            var result = sum(10, 20);
+            console.log(result)
+
+            var add = function (a, b) {
+                return a + b;
+            }
+            var result = add(4, 5);
+            console.log(result)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

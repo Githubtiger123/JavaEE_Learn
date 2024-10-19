@@ -1,0 +1,48 @@
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .outerDiv {
+            width: 500px;
+            height: 300px;
+            border: 1px solid green;
+            background-color: rgb(230, 224, 224);
+            /*使控件剧中*/
+            margin: 0px auto;
+        }
+
+        .innerDiv {
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+            float: left;
+        }
+
+        .d1 {
+            background-color: greenyellow;
+            margin-right: 30px;
+            margin-top: 20px;
+            margin-left: 20px;
+            padding-left: 50px;
+            padding-top: 50px;
+        }
+
+        .d2 {
+            background-color: rgb(79, 230, 124);
+            /*先上下后左右*/
+            margin: 10PX 20px;
+            /*上右下左 顺时针*/
+            padding: 10PX 20px 30px 40px;
+        }
+
+        .d3 {
+            background-color: rgb(26, 165, 208);
+        }
+    </style>
+</head>
+<body>
+    <div class="outerDiv">
+        <div class="innerDiv d1">框1</div>
+        <div class="innerDiv d2">框2</div>
+        <div class="innerDiv d3">框3</div>
+    </div>
+</body>
