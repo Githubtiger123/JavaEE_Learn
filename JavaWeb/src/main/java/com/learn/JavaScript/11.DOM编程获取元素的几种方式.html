@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <script>
+
+            function fun1() {
+                var b = document.getElementById("btn01");
+                console.log(b)
+            }
+
+            function fun2() {
+                var b = document.getElementsByTagName("input");
+                for (let i = 0; i < b.length; i++) {
+                    console.log(b[i])
+                }
+            }
+
+            function fun3() {
+                var b = document.getElementsByName("aaa");
+                for (let i = 0; i < b.length; i++) {
+                    console.log(b[i])
+                }
+            }
+
+            function fun4() {
+                var b = document.getElementsByClassName("cs1");
+                for (let i = 0; i < b.length; i++) {
+                    console.log(b[i])
+                }
+            }
+
+            function fun5() {
+                //获取父元素
+                var p = document.getElementById("div01")
+                var s = p.children
+                for (let i = 0; i < s.length; i++) {
+                    console.log(s[i])
+                }
+                console.log("-----------------------")
+                //获取第一个子元素
+                console.log(p.firstElementChild)
+                //获取第最后一个子元素
+                console.log(p.lastElementChild)
+            }
+
+            function fun6() {
+                //获取子元素
+                var c = document.getElementById("username")
+                //获取父元素
+                console.log(c.parentElement)
+            }
+
+            function fun7() {
+                var c = document.getElementById("email")
+                //前一个兄弟元素
+                console.log(c.previousElementSibling)
+                //后一个兄弟元素
+                console.log(c.nextElementSibling)
+            }
+
+        </script>
+
+    </head>
+    <body>
+
+        <div id="div01">
+            <input type="text" id="username" name="aaa" class="cs1"/>
+            <input type="text" id="password" name="aaa"/>
+            <input type="text" id="email" class="cs1"/>
+            <input type="text" id="address"/>
+        </div>
+        <input type="text"/><br>
+        <!--        直接获取-->
+        <input type="button" value="根据ID获取指定元素" onclick="fun1()" id="btn01"/>
+        <input type="button" value="根据标签名获取多个元素" onclick="fun2()" id="btn02"/>
+        <input type="button" value="根据元素的name获取元素" onclick="fun3()" id="btn03"/>
+        <input type="button" value="根据class属性获取多个元素" onclick="fun4()" id="btn04"/>
+        <hr>
+        <br>
+        <!--        间接获取-->
+        <input type="button" value="通过父元素获取子元素" onclick="fun5()" id="btn05"/>
+        <input type="button" value="通过子元素获取父元素" onclick="fun6()" id="btn06"/>
+        <input type="button" value="通过子元素获取兄弟元素" onclick="fun7()" id="btn07"/>
+
+
+    </body>
+</html>

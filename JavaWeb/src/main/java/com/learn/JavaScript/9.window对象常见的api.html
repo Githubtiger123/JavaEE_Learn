@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+            function func1() {
+                //window的方法可以不写window.
+                window.alert("我是提示框")
+            }
+
+            function func2() {
+                //window的方法可以不写window.
+                var s = window.prompt("我是输入框")
+                console.log(s)
+            }
+
+            function func3() {
+                //window的方法可以不写window.
+                var b = window.confirm("我是确认框")
+                console.log(b)
+            }
+
+            function func4() {
+
+                window.setTimeout(function () {
+                    var b = window.confirm("我是提示框")
+                    console.log(b)
+                }, 2000)
+            }
+        </script>
+    </head>
+    <body>
+
+        <button onclick="func1()">点我提示框</button>
+        <button onclick="func2()">点我输入框</button>
+        <button onclick="func3()">点我确认框</button>
+        <button onclick="func4()">点我两秒弹出提示框</button>
+
+    </body>
+</html>

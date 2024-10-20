@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script>
+            //history中相关api
+            function func1() {
+                history.back()
+            }
+
+            function func2() {
+                history.forward()
+            }
+
+            function func3() {
+                history.go(1)
+            }
+
+            function func4() {
+                history.go(-1)
+            }
+
+            function func5() {
+                window.location.href = "https://www.bilibili.com"
+            }
+
+            //存储数据
+            function testA() {
+
+                sessionStorage.setItem("session", "s_value")
+                //本地存储浏览器重启还存在
+                localStorage.setItem("local", "l_value")
+            }
+
+            //查询数据
+            function testB() {
+                console.log(sessionStorage.getItem("session"))
+                console.log(localStorage.getItem("local"))
+            }
+
+            //删除数据
+            function testC() {
+                // sessionStorage.clear()
+                // localStorage.clear()
+                sessionStorage.removeItem("session")
+                sessionStorage.removeItem("local")
+            }
+        </script>
+    </head>
+    <body>
+
+
+        <button onclick="func1()">点我向前返回</button>
+        <button onclick="func2()">点我向后前进</button>
+        <button onclick="func3()">点我跳转前进1页</button>
+        <button onclick="func4()">点我跳转后退1页</button>
+        <a href="https://www.baidu.com"> 百度</a>
+        <button onclick="func5()">点我修改地址栏地址并跳转</button>
+        <button onclick="testA()">sessionStorage</button>
+        <button onclick="testB()">localStorage</button>
+        <button onclick="testC()">localStorage</button>
+
+    </body>
+</html>

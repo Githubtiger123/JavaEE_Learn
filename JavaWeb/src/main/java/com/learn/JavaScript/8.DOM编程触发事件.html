@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <style>
+            .div1 {
+                width: 100px;
+                height: 100px;
+                background-color: green;
+            }
+        </style>
+
+        <script>
+
+            function ready() {
+
+                var btn = document.getElementById("btn1");
+                btn.onclick = function () {
+                    alert("点击了按钮")
+                }
+            }
+
+            //方式三：页面加载完毕事件,浏览器加载完整个文档行为
+            //这样不用在body中指明onload="ready()"
+            window.onload = function () {
+
+                var div1 = document.getElementById("d1")
+                div1.onclick = function () {
+                    div1.style.backgroundColor = "red"
+                }
+
+                var btn = document.getElementById("btn1");
+                btn.onclick = function () {
+                    alert("点击了按钮")
+                    div1.click()
+                }
+            }
+
+        </script>
+        <!--        放在head中不起作用了-->
+
+    </head>
+
+    <!--    指定onload解决这个问题-->
+    <body>
+        <!--    <body onload="ready()">-->
+
+        <div id="d1" class="div1">
+
+        </div>
+
+        <button id="btn1">
+            这是按钮
+        </button>
+
+        <!--        <script>-->
+        <!--            var btn = document.getElementById("btn1");-->
+        <!--            btn.onclick = function () {-->
+        <!--                alert("点击了按钮")-->
+        <!--            }-->
+        <!--        </script>-->
+
+    </body>
+</html>
