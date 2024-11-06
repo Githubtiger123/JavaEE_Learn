@@ -16,7 +16,7 @@ import java.io.IOException;
  * 5.模糊匹配 * 是模糊匹配通配符
  * 6./* 是匹配/下任意内容
  * 7./XXX* 是匹配/XXX下任意内容
- * 8.匹配后缀注意不能以/开头 ，格式*XXX
+ * 8.匹配后缀注意不能以/开头 ，格式*.XXX
  *
  */
 public class TestURLPattern extends HttpServlet {
