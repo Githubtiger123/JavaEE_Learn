@@ -37,5 +37,10 @@ public class ContextTest extends HttpServlet {
             System.out.println(servletContext.getInitParameter(name));
         }
 
+        System.out.println("_________________________");
+        //获取磁盘上文件夹/文件真实路径
+        System.out.println(servletContext.getRealPath("static/gift.png"));
+        System.out.println(servletContext.getRealPath("aaa/a.txt"));
+
     }
 }
