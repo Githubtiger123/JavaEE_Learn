@@ -1,16 +1,20 @@
 package com.example.config;
 
+import com.alibaba.fastjson2.support.spring6.http.converter.FastJsonHttpMessageConverter;
+import com.example.Interceptor.MainInterceptor;
+import com.example.Interceptor.SubInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.*;
 import org.thymeleaf.spring6.SpringTemplateEngine;
 import org.thymeleaf.spring6.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
+
+import java.util.List;
 
 @EnableWebMvc
 @Configuration
@@ -58,4 +62,32 @@ public class WebConfiguration implements WebMvcConfigurer {
         //配置静态资源的访问路径
     }
 
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+
+        registry.addInterceptor(new MainInterceptor()).addPathPatterns("/**")     //拦截所有请求
+                .excludePathPatterns("/test").order(2);     //排除拦截的请求 不会执行Interceptor中的三个方法
+
+        registry.addInterceptor(new SubInterceptor()).addPathPatterns("/**")     //拦截所有请求
+                .excludePathPatterns("/test").order(1);     //排除拦截的请求 不会执行Interceptor中的三个方法
+
+        //order(1)排序
+        //默认顺序
+        //一号拦截器处理之前
+        //二号拦截器处理之前
+        //test1请求执行
+        //二号拦截器处理之后
+        //一号拦截器处理之后
+        //二号拦截器处理完成
+        //一号拦截器处理完成
+
+    }
+
+    //配置fastjson对于spring的支持
+
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+
+        converters.add(new FastJsonHttpMessageConverter());
+    }
 }
