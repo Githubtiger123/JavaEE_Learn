@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>白马银行 - 首页</title>
+        <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <div>
+            <label>
+                转账账号：
+                <input type="text" id="account"/>
+            </label>
+            <input type="text" th:id="${_csrf.getParameterName()}" th:value="${_csrf.token}" hidden>
+            <button onclick="pay()">立即转账</button>
+        </div>
+    </body>
+</html>
+
+<script>
+    function pay() {
+        const account = document.getElementById("account").value;
+        const _csrf = document.getElementById("_csrf").value;
+
+        // 使用 URLSearchParams 转换数据
+        const params = new URLSearchParams();
+        params.append('account', account);
+        params.append('_csrf', _csrf);
+
+        axios.post('/mvc/pay', params, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            }
+        }).then(({data}) => {
+            if (data.success)
+                alert("转账成功");
+            else
+                alert("转账失败");
+        }).catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
