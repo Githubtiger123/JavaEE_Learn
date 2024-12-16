@@ -1,5 +1,6 @@
 package com.example.init;
 
+import com.example.config.MysqlConfiguration;
 import com.example.config.SecurityConfiguration;
 import com.example.config.WebConfiguration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -7,7 +8,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class MainInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{WebConfiguration.class, SecurityConfiguration.class};
+        return new Class[]{WebConfiguration.class, SecurityConfiguration.class, MysqlConfiguration.class};
     }
 
     @Override
